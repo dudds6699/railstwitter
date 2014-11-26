@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126224402) do
+ActiveRecord::Schema.define(version: 20141126231956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141126224402) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.spatial  "coords",     limit: {:srid=>4326, :type=>"point"}
+    t.string   "tweettext"
   end
 
 end
