@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  twitterID: MyString
+  tweetID: MyString
+  username: MyString
+  place: MyString
+  coords: 
+
+two:
+  twitterID: MyString
+  tweetID: MyString
+  username: MyString
+  place: MyString
+  coords: 
