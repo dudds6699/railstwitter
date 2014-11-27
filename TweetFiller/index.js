@@ -16,7 +16,7 @@ function makeSQL(tweet){
     //converts the thing to sql nice stuff
     var srid = 4326;  
     var coordinates = tweet.geo.coordinates;
-    var place = tweet.place.name == null ? "": tweet.place.name;
+    var place = tweet.place == null ? "": tweet.place.name;
     var query =
         {
                // text : "INSERT INTO tweets (username, tweet, geo) Values ($1,$2,st_setsrid(st_makepoint($3,$4),"+srid+"))",
