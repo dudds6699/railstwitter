@@ -16,11 +16,12 @@ function makeSQL(tweet){
     //converts the thing to sql nice stuff
     var srid = 4326;  
     var coordinates = tweet.geo.coordinates;
+    var place = tweet.place.name == null ? "": tweet.place.name;
     var query =
         {
                // text : "INSERT INTO tweets (username, tweet, geo) Values ($1,$2,st_setsrid(st_makepoint($3,$4),"+srid+"))",
 				text : 'INSERT INTO tweets ("twitterID", "tweetID", username, place, coords, created_at, tweettext) Values ($1,$2, $3, $4 ,st_setsrid(st_makepoint($5,$6),'+srid+'), $7, $8)',
-				values:[tweet.user.id_str ,tweet.id_str, tweet.user.screen_name, tweet.place.name, coordinates[1] , coordinates[0], new Date(), tweet.text  ]
+				values:[tweet.user.id_str ,tweet.id_str, tweet.user.screen_name, place, coordinates[1] , coordinates[0], new Date(), tweet.text  ]
         };
         
     return query;
