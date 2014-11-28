@@ -1,0 +1,13 @@
+<% @tweets.each do |item| %>
+    <tr>
+        <td>
+            <%= item.username %>
+        </td>
+        <td>
+            <%= item.tweettext %>
+        </td>
+        <td>
+            <a href="https://twitter.com/<%= item.username + '/status/' + item.tweetID  %>">Go There</a>
+        </td>
+    </tr>
+<% end %>
