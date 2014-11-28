@@ -29,16 +29,16 @@ class HomeController < ApplicationController
   
   #page Calculation very weird
   private
-  def pager(pageNum)
-      tweetPPCount = 100
-      totalTweets = Tweet.count()
+    def pager(pageNum)
+        tweetPPCount = 100
+        totalTweets = Tweet.count()
       
-  if pageNum > 1
-      start = totalTweets - (pageNum - 1) * tweetPPCount
-      return Tweet.where('id >= ? and id <= ?', start , start + tweetPPCount)
-  else
-      return Tweet.take(tweetPPCount)
-  end
+    if pageNum > 1
+        start = totalTweets - (pageNum - 1) * tweetPPCount
+        return Tweet.where('id >= ? and id <= ?', start , start + tweetPPCount)
+    else
+        return Tweet.take(tweetPPCount)
+    end
       
   end
   
