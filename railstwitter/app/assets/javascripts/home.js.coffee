@@ -8,9 +8,18 @@ $(document).ready ->
             request = $.get '/home/update'
             request.success (data) -> $('#tweetCounter').html data
         ,1000
+        
+$(document).ready ->
+    $('#lastTweet').each ->
+        setInterval () ->
+            request = $.get '/home/lastTweet'
+            request.success (data) -> 
+                $('#lastTweet').slideUp ->
+                    $('#lastTweet').html data.tweettext + " -" + data.username
+                $('#lastTweet').slideDown ->
+        ,10000
     
 $(document).ready ->
-   
    $(document).scroll ->
     if ($(window).scrollTop() >= ($(document).height() - $(window).height())*0.7)
             page = $('.lazyloaded').data('page')

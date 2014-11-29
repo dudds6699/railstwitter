@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'home/update'
   get 'home/loadPages'
   get 'home/view'
+  get 'home/lastTweet'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

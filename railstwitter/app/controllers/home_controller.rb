@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   #loads the main page
   def index
       @tweet = Tweet.count()
+      @last = Tweet.last
   end
   
   #updates the tweet count when the node program is running
@@ -28,6 +29,10 @@ class HomeController < ApplicationController
       @tweets = pager(p)
       render partial: 'tweet', formats: :html, :locals => {:tweets => @tweets}
       
+  end
+  
+  def lastTweet
+      render :json => Tweet.last
   end
   
   #page Calculation very weird
