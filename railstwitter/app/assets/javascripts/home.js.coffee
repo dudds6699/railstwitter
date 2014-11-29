@@ -3,16 +3,18 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-    setInterval () ->
-        request = $.get '/home/update'
-        request.success (data) -> $('#tweetCounter').html data
-    ,1000
+    $('#tweetCounter').each ->
+        setInterval () ->
+            request = $.get '/home/update'
+            request.success (data) -> $('#tweetCounter').html data
+        ,1000
     
 $(document).ready ->
    
-    $('#load').click ->
+   $(document).scroll ->
+    if ($(window).scrollTop() >= ($(document).height() - $(window).height())*0.7)
             page = $('.lazyloaded').data('page')
-            request = $.get 'home/loadPages?page=' + page
+            request = $.get '/home/loadPages?page=' + page
             
             page++
             $('.lazyloaded').data('page', page)

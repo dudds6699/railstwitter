@@ -1,25 +1,6 @@
 <h1>Tweets Collected</h1>
 <div id="tweetCounter" class="well"><%= @tweet %></div>
 <div>
-    <table class="table table-striped lazyloaded" data-page="<%= @startPage %>">
-        <thead>
-            <tr>
-                <th>
-                    User Name
-                </th>
-                <th>
-                    Tweet
-                </th>
-                <th>
-                    Link
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <%= render partial: "tweet", locals: {tweets: @tweets} %>
-        </tbody>
-    </table>
+    <%= link_to "View My Tweets", :home_view , :class => "btn btn-primary"%>
 </div>
-<div>
-    <button type="button" class="btn btn-primary col-sm-12" id="load">Load More</button>
-</div>
+

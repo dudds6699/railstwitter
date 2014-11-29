@@ -1,0 +1,23 @@
+<div class="well">
+    My Tweet Collection
+</div>
+<div>
+    <table class="table table-striped lazyloaded" data-page="<%= @startPage %>">
+        <thead>
+            <tr>
+                <th>
+                    User Name
+                </th>
+                <th>
+                    Tweet
+                </th>
+                <th>
+                    Link
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <%= render partial: "tweet", locals: {tweets: @tweets} %>
+        </tbody>
+    </table>
+</div>
