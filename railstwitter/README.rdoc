@@ -7,21 +7,21 @@ Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+Postgresql
+Postgis extension
 
-* Configuration
+setup a post gis user account
+and then add it to both the keys.js for the Twitter filler and the database.yml
 
 * Database creation
+rake db:setup
+possbiley
+rake db:gis:setup
+not sure
 
 * Database initialization
+after running the rake db:setup command it should be free to enter tweets on the developer db
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run
