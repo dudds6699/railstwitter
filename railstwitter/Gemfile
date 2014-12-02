@@ -43,3 +43,9 @@ gem 'activerecord-postgis-adapter'
 
 #for bootstrap
 gem 'bootstrap3-rails', '~> 3.2.0'
+
+#so i can do dumps
+gem 'yaml_db'
+
+#d3 is the bomb
+gem "d3-rails"

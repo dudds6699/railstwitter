@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'map/d3'
+
+  get 'map/google'
+
   root 'home#index'
   get 'home/update'
   get 'home/loadPages'
