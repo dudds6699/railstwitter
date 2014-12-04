@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(version: 20141202010308) do
     t.spatial "geom",       limit: {:srid=>4326, :type=>"multi_polygon"}
   end
 
+  add_index "countries", ["geom"], :name => "countries_geom_idx", :spatial => true
+
   create_table "tweets", force: true do |t|
     t.string   "twitterID"
     t.string   "tweetID"
