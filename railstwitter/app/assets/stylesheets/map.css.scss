@@ -21,3 +21,9 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+}
