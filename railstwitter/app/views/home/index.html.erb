@@ -2,7 +2,9 @@
     <h1>Tweets Collected</h1>
 </div>
 <div class="row">
-    <div id="tweetCounter" class="well col-sm-4 col-sm-offset-4"><%= @tweet %></div>
+    <div id="tweetCounter" class="well col-sm-4 col-sm-offset-4">
+	<%= @tweet %>
+    </div>
 </div>
 
 <div class="row">
@@ -12,7 +14,9 @@
     
     <div class="well col-sm-8 col-sm-offset-1">
         <div id="lastTweet">
+	<% if @last then %>
             <%= @last.tweettext %> -<%= @last.username %>
+	<% end %>
         </div>
     </div>
 </div>
