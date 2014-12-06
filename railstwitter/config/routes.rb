@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :users
+
   get 'map/d3'
 
   get 'map/google'
