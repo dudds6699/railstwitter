@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126231956) do
+ActiveRecord::Schema.define(version: 20141206010742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,8 +24,17 @@ ActiveRecord::Schema.define(version: 20141126231956) do
     t.string   "place"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.spatial  "coords",     limit: {:srid=>4326, :type=>"point"}
     t.string   "tweettext"
+    t.spatial  "coords",     limit: {:srid=>4326, :type=>"point"}
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "phonenumber"
+    t.integer  "age"
+    t.datetime "birthday"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
