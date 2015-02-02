@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
- 
   
   #loads the main page
   def index
@@ -42,7 +41,7 @@ class HomeController < ApplicationController
         totalTweets = Tweet.count()
       
     if pageNum > 1
-        start = totalTweets - (pageNum - 1) * tweetPPCount
+        start = (totalTweets - (pageNum - 1)) * tweetPPCount
         return Tweet.where('id >= ? and id <= ?', start , start + tweetPPCount)
     else
         return Tweet.take(tweetPPCount)

@@ -23,11 +23,12 @@ $(document).ready ->
    $(document).scroll ->
     if ($(window).scrollTop() >= ($(document).height() - $(window).height())*0.7)
             page = $('.lazyloaded').data('page')
-            request = $.get '/home/loadPages?page=' + page
+            if (page != undefined)
+                request = $.get '/home/loadPages?page=' + page
             
-            page++
-            $('.lazyloaded').data('page', page)
+                page++
+                $('.lazyloaded').data('page', page)
             
-            request.success (data) -> $('.lazyloaded > tbody').append data 
+                request.success (data) -> $('.lazyloaded > tbody').append data 
             
            
