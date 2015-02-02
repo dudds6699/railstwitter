@@ -9,11 +9,11 @@ initialize = () ->
         zoom: 8,
         mapTypeId: google.maps.MapTypeId.SATELLITE
     }
-       
     map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions)
 
 
 
 
 $(document).ready ->
-    initialize()
+    if(document.getElementById('map-canvas') != null)
+        google.maps.event.addDomListener(window, "load", initialize);
